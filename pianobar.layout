@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src/main.c" open="1" top="0" tabpos="1">
+		<Cursor position="10123" topLine="317" />
+	</File>
+	<File name="src/main.h" open="1" top="0" tabpos="2">
+		<Cursor position="1141" topLine="0" />
+	</File>
+	<File name="src/piano.c" open="1" top="0" tabpos="8">
+		<Cursor position="1304" topLine="7" />
+	</File>
+	<File name="src/player.c" open="1" top="1" tabpos="11">
+		<Cursor position="10084" topLine="297" />
+	</File>
+	<File name="src/player.h" open="1" top="0" tabpos="3">
+		<Cursor position="1299" topLine="13" />
+	</File>
+	<File name="src/settings.c" open="1" top="0" tabpos="9">
+		<Cursor position="3561" topLine="101" />
+	</File>
+	<File name="src/settings.h" open="1" top="0" tabpos="4">
+		<Cursor position="1149" topLine="0" />
+	</File>
+	<File name="src/ui.h" open="1" top="0" tabpos="5">
+		<Cursor position="1137" topLine="0" />
+	</File>
+	<File name="src/ui_act.h" open="1" top="0" tabpos="6">
+		<Cursor position="1145" topLine="0" />
+	</File>
+	<File name="src/ui_dispatch.h" open="1" top="0" tabpos="7">
+		<Cursor position="3882" topLine="70" />
+	</File>
+	<File name="src/xml.c" open="1" top="0" tabpos="10">
+		<Cursor position="1207" topLine="2" />
+	</File>
+</CodeBlocks_layout_file>
