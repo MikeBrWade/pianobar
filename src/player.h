@@ -37,8 +37,8 @@ THE SOFTWARE.
 #include <ao/ao.h>
 #include <pthread.h>
 
-#include <piano.h>
-#include <waitress.h>
+#include "piano.h"
+#include "waitress.h"
 
 #define BAR_PLAYER_MS_TO_S_FACTOR 1000
 

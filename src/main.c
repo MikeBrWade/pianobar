@@ -44,7 +44,7 @@ THE SOFTWARE.
 #include <limits.h>
 
 /* pandora.com library */
-#include <piano.h>
+#include "piano.h"
 
 #include "main.h"
 #include "terminal.h"

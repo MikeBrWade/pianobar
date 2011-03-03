@@ -24,7 +24,7 @@ THE SOFTWARE.
 #ifndef _UI_ACT_H
 #define _UI_ACT_H
 
-#include <piano.h>
+#include "piano.h"
 
 #include "main.h"
 #include "ui_dispatch.h"

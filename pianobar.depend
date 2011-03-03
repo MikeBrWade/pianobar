@@ -1,0 +1,221 @@
+# depslib dependency file v1.0
+1299131397 source:/home/mikebrwade/Development/pianobar/src/main.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<unistd.h>
+	<sys/select.h>
+	<time.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<termios.h>
+	<pthread.h>
+	<assert.h>
+	<stdbool.h>
+	<limits.h>
+	"piano.h"
+	"main.h"
+	"terminal.h"
+	"config.h"
+	"ui.h"
+	"ui_dispatch.h"
+	"ui_readline.h"
+
+1299131397 /home/mikebrwade/Development/pianobar/src/main.h
+	"piano.h"
+	"waitress.h"
+	"player.h"
+	"settings.h"
+	"ui_readline.h"
+
+1299131397 /home/mikebrwade/Development/pianobar/src/player.h
+	"config.h"
+	<neaacdec.h>
+	<mad.h>
+	<ao/ao.h>
+	<pthread.h>
+	"piano.h"
+	"waitress.h"
+
+1299131334 /home/mikebrwade/Development/pianobar/src/config.h
+
+1299131397 /home/mikebrwade/Development/pianobar/src/settings.h
+	"piano.h"
+	"waitress.h"
+
+1299122131 /home/mikebrwade/Development/pianobar/src/ui_readline.h
+	<stdbool.h>
+	<sys/select.h>
+
+1299122131 /home/mikebrwade/Development/pianobar/src/terminal.h
+
+1299131397 /home/mikebrwade/Development/pianobar/src/ui.h
+	"piano.h"
+	"waitress.h"
+	"settings.h"
+	"player.h"
+	"main.h"
+	"ui_readline.h"
+
+1299131397 /home/mikebrwade/Development/pianobar/src/ui_dispatch.h
+	"settings.h"
+	"main.h"
+	"ui_act.h"
+	"piano.h"
+	<stdbool.h>
+	<stdio.h>
+
+1299131397 /home/mikebrwade/Development/pianobar/src/ui_act.h
+	"piano.h"
+	"main.h"
+	"ui_dispatch.h"
+
+1299132339 source:/home/mikebrwade/Development/pianobar/src/player.c
+	<unistd.h>
+	<string.h>
+	<math.h>
+	<stdint.h>
+	<limits.h>
+	<arpa/inet.h>
+	"player.h"
+	"config.h"
+	"ui.h"
+
+1299122131 source:/home/mikebrwade/Development/pianobar/src/settings.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<limits.h>
+	<assert.h>
+	"settings.h"
+	"config.h"
+	"ui_dispatch.h"
+
+1299122131 source:/home/mikebrwade/Development/pianobar/src/terminal.c
+	<termios.h>
+	<stdio.h>
+
+1299122131 source:/home/mikebrwade/Development/pianobar/src/ui.c
+	<stdio.h>
+	<stdarg.h>
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<errno.h>
+	<strings.h>
+	<assert.h>
+	<sys/types.h>
+	<sys/wait.h>
+	"ui.h"
+	"ui_readline.h"
+
+1299122131 source:/home/mikebrwade/Development/pianobar/src/ui_act.c
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	<assert.h>
+	"ui.h"
+	"ui_readline.h"
+	"ui_dispatch.h"
+
+1299122131 source:/home/mikebrwade/Development/pianobar/src/ui_dispatch.c
+	<assert.h>
+	"ui_dispatch.h"
+	"settings.h"
+	"ui.h"
+
+1299122131 source:/home/mikebrwade/Development/pianobar/src/ui_readline.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<assert.h>
+	"ui_readline.h"
+
+1299130837 source:/home/mikebrwade/Development/pianobar/src/crypt.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<arpa/inet.h>
+	"crypt_key_output.h"
+	"crypt_key_input.h"
+	"piano_private.h"
+
+1299130837 /home/mikebrwade/Development/pianobar/src/crypt_key_output.h
+	<stdint.h>
+
+1299130837 /home/mikebrwade/Development/pianobar/src/crypt_key_input.h
+	<stdint.h>
+
+1299130837 /home/mikebrwade/Development/pianobar/src/piano_private.h
+	"piano.h"
+
+1299130837 /home/mikebrwade/Development/pianobar/src/piano.h
+
+1299130824 source:/home/mikebrwade/Development/pianobar/src/ezxml.c
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<ctype.h>
+	<unistd.h>
+	<sys/types.h>
+	<sys/stat.h>
+	"ezxml.h"
+
+1299130824 /home/mikebrwade/Development/pianobar/src/ezxml.h
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<fcntl.h>
+
+1299130845 /home/mikebrwade/Development/pianobar/src/waitress.h
+	<stdlib.h>
+
+1299131107 source:/home/mikebrwade/Development/pianobar/src/piano.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	<assert.h>
+	<stdint.h>
+	"waitress.h"
+	"piano_private.h"
+	"piano.h"
+	"xml.h"
+	"crypt.h"
+	"config.h"
+
+1299130837 /home/mikebrwade/Development/pianobar/src/xml.h
+	"piano.h"
+
+1299130837 /home/mikebrwade/Development/pianobar/src/crypt.h
+
+1299130845 source:/home/mikebrwade/Development/pianobar/src/waitress.c
+	<sys/types.h>
+	<sys/socket.h>
+	<netdb.h>
+	<string.h>
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<fcntl.h>
+	<poll.h>
+	<errno.h>
+	"config.h"
+	"waitress.h"
+
+1299131531 source:/home/mikebrwade/Development/pianobar/src/xml.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"ezxml.h"
+	"piano.h"
+	"crypt.h"
+	"config.h"
+	"piano_private.h"
+

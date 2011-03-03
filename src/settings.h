@@ -24,8 +24,8 @@ THE SOFTWARE.
 #ifndef _SETTINGS_H
 #define _SETTINGS_H
 
-#include <piano.h>
-#include <waitress.h>
+#include "piano.h"
+#include "waitress.h"
 
 /* update structure in ui_dispatch.h if you add shortcuts here */
 typedef enum {

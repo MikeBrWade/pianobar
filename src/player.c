@@ -448,7 +448,7 @@ void *BarPlayerThread (void *data) {
 			return PLAYER_RET_OK;
 			break;
 	}
-	
+
 	player->mode = PLAYER_INITIALIZED;
 
 	/* This loop should work around song abortions by requesting the

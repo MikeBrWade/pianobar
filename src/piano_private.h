@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2008-2011
+Copyright (c) 2008-2010
 	Lars-Dominik Braun <lars@6xq.net>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,24 +25,7 @@ THE SOFTWARE.
 #define _MAIN_H
 
 #include "piano.h"
-#include "waitress.h"
 
-#include "player.h"
-#include "settings.h"
-#include "ui_readline.h"
-
-typedef struct {
-	PianoHandle_t ph;
-	WaitressHandle_t waith;
-	struct audioPlayer player;
-	BarSettings_t settings;
-	/* first item is current song */
-	PianoSong_t *playlist;
-	PianoSong_t *songHistory;
-	PianoStation_t *curStation;
-	char doQuit;
-	BarReadlineFds_t input;
-} BarApp_t;
+void PianoDestroyStation (PianoStation_t *station);
 
 #endif /* _MAIN_H */
-

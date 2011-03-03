@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2008-2011
+Copyright (c) 2008-2010
 	Lars-Dominik Braun <lars@6xq.net>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,28 +21,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef _XML_H
+#define _XML_H
 
 #include "piano.h"
-#include "waitress.h"
 
-#include "player.h"
-#include "settings.h"
-#include "ui_readline.h"
+PianoReturn_t PianoXmlParseUserinfo (PianoHandle_t *ph, const char *xml);
+PianoReturn_t PianoXmlParseStations (PianoHandle_t *ph, const char *xml);
+PianoReturn_t PianoXmlParsePlaylist (PianoHandle_t *ph, const char *xml,
+		PianoSong_t **);
+PianoReturn_t PianoXmlParseSearch (const char *searchXml,
+		PianoSearchResult_t *searchResult);
+PianoReturn_t PianoXmlParseSimple (const char *xml);
+PianoReturn_t PianoXmlParseCreateStation (PianoHandle_t *ph,
+		const char *xml);
+PianoReturn_t PianoXmlParseAddSeed (PianoHandle_t *ph, const char *xml,
+		PianoStation_t *station);
+PianoReturn_t PianoXmlParseGenreExplorer (PianoHandle_t *ph,
+		const char *xmlContent);
+PianoReturn_t PianoXmlParseTranformStation (const char *searchXml);
+PianoReturn_t PianoXmlParseNarrative (const char *xml, char **retNarrative);
+PianoReturn_t PianoXmlParseSeedSuggestions (char *, PianoSearchResult_t *);
 
-typedef struct {
-	PianoHandle_t ph;
-	WaitressHandle_t waith;
-	struct audioPlayer player;
-	BarSettings_t settings;
-	/* first item is current song */
-	PianoSong_t *playlist;
-	PianoSong_t *songHistory;
-	PianoStation_t *curStation;
-	char doQuit;
-	BarReadlineFds_t input;
-} BarApp_t;
+char *PianoXmlEncodeString (const char *s);
 
-#endif /* _MAIN_H */
-
+#endif /* _XML_H */

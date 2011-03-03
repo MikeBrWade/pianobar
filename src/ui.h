@@ -24,8 +24,8 @@ THE SOFTWARE.
 #ifndef _UI_H
 #define _UI_H
 
-#include <piano.h>
-#include <waitress.h>
+#include "piano.h"
+#include "waitress.h"
 
 #include "settings.h"
 #include "player.h"
@@ -45,7 +45,7 @@ PianoArtist_t *BarUiSelectArtist (PianoArtist_t *, BarReadlineFds_t *);
 char *BarUiSelectMusicId (BarApp_t *, char *);
 void BarStationFromGenre (BarApp_t *);
 void BarUiPrintStation (PianoStation_t *);
-void BarUiPrintSong (const BarSettings_t *, const PianoSong_t *, 
+void BarUiPrintSong (const BarSettings_t *, const PianoSong_t *,
 		const PianoStation_t *);
 size_t BarUiListSongs (const BarSettings_t *, const PianoSong_t *);
 void BarUiStartEventCmd (const BarSettings_t *, const char *,

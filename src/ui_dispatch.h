@@ -94,7 +94,7 @@ static const BarUiDispatchAction_t dispatchActions[BAR_KS_COUNT] = {
 				"act_volup"},
 		};
 
-#include <piano.h>
+#include "piano.h"
 #include <stdbool.h>
 #include <stdio.h>
 
