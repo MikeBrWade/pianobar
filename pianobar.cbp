@@ -30,10 +30,73 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-ansi" />
+			<Add option="-g" />
+			<Add option="-std=c99" />
+			<Add option="-DENABLE_FAAD" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Linker>
+			<Add library="ao" />
+			<Add library="m" />
+			<Add library="pthread" />
+			<Add library="faad" />
+		</Linker>
+		<Unit filename="src/config.h" />
+		<Unit filename="src/crypt.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/crypt.h" />
+		<Unit filename="src/crypt_key_input.h" />
+		<Unit filename="src/crypt_key_output.h" />
+		<Unit filename="src/ezxml.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ezxml.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.h" />
+		<Unit filename="src/piano.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/piano.h" />
+		<Unit filename="src/piano_private.h" />
+		<Unit filename="src/player.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/player.h" />
+		<Unit filename="src/settings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/settings.h" />
+		<Unit filename="src/terminal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/terminal.h" />
+		<Unit filename="src/ui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ui.h" />
+		<Unit filename="src/ui_act.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ui_act.h" />
+		<Unit filename="src/ui_dispatch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ui_dispatch.h" />
+		<Unit filename="src/ui_readline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/ui_readline.h" />
+		<Unit filename="src/waitress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/waitress.h" />
+		<Unit filename="src/xml.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/xml.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
