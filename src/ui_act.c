@@ -251,6 +251,7 @@ BarUiActCallback(BarUiActDebug) {
 			"audioFormat:\t%i\n"
 			"audioUrl:\t%s\n"
 			"coverArt:\t%s\n"
+			"detailUrl:\t%s\n"
 			"fileGain:\t%f\n"
 			"musicId:\t%s\n"
 			"rating:\t%i\n"
@@ -264,6 +265,7 @@ BarUiActCallback(BarUiActDebug) {
 			selSong->audioFormat,
 			selSong->audioUrl,
 			selSong->coverArt,
+			selSong->detailUrl,
 			selSong->fileGain,
 			selSong->musicId,
 			selSong->rating,
@@ -413,7 +415,7 @@ BarUiActCallback(BarUiActPrintUpcoming) {
 
 	PianoSong_t *nextSong = selSong->next;
 	if (nextSong != NULL) {
-		BarUiListSongs (&app->settings, nextSong);
+		BarUiListSongs (&app->settings, nextSong, NULL);
 	} else {
 		BarUiMsg (MSG_INFO, "No songs in queue.\n");
 	}
@@ -526,5 +528,63 @@ BarUiActCallback(BarUiActVolUp) {
 	++app->settings.volume;
 	/* FIXME: assuming unsigned integer store is atomic operation */
 	app->player.scale = BarPlayerCalcScale (app->player.gain + app->settings.volume);
+}
+
+/*	manage station (remove seeds or feedback)
+ */
+BarUiActCallback(BarUiActManageStation) {
+	PianoReturn_t pRet;
+	WaitressReturn_t wRet;
+	PianoRequestDataGetStationInfo_t reqData;
+	char selectBuf[2];
+
+	memset (&reqData, 0, sizeof (reqData));
+	reqData.station = selStation;
+
+	BarUiMsg (MSG_INFO, "Fetching station info... ");
+	BarUiActDefaultPianoCall (PIANO_REQUEST_GET_STATION_INFO, &reqData);
+	BarUiActDefaultEventcmd ("stationfetchinfo");
+
+	BarUiMsg (MSG_QUESTION, "Delete [a]rtist/[s]ong seeds or [f]eedback? ");
+	if (BarReadline (selectBuf, sizeof (selectBuf), "asf", &app->input,
+					BAR_RL_FULLRETURN, -1)) {
+		if (selectBuf[0] == 'a') {
+			PianoArtist_t *artist = BarUiSelectArtist (reqData.info.artistSeeds,
+					&app->input);
+			if (artist != NULL) {
+				PianoRequestDataDeleteSeed_t reqData;
+
+				memset (&reqData, 0, sizeof (reqData));
+				reqData.artist = artist;
+
+				BarUiMsg (MSG_INFO, "Deleting artist seed... ");
+				BarUiActDefaultPianoCall (PIANO_REQUEST_DELETE_SEED, &reqData);
+				BarUiActDefaultEventcmd ("stationdeleteartistseed");
+			}
+		} else if (selectBuf[0] == 's') {
+			PianoSong_t *song = BarUiSelectSong (&app->settings,
+					reqData.info.songSeeds, &app->input);
+			if (song != NULL) {
+				PianoRequestDataDeleteSeed_t reqData;
+
+				memset (&reqData, 0, sizeof (reqData));
+				reqData.song = song;
+
+				BarUiMsg (MSG_INFO, "Deleting song seed... ");
+				BarUiActDefaultPianoCall (PIANO_REQUEST_DELETE_SEED, &reqData);
+				BarUiActDefaultEventcmd ("stationdeletesongseed");
+			}
+		} else if (selectBuf[0] == 'f') {
+			PianoSong_t *song = BarUiSelectSong (&app->settings,
+					reqData.info.feedback, &app->input);
+			if (song != NULL) {
+				BarUiMsg (MSG_INFO, "Deleting feedback... ");
+				BarUiActDefaultPianoCall (PIANO_REQUEST_DELETE_FEEDBACK, song);
+				BarUiActDefaultEventcmd ("stationdeletefeedback");
+			}
+		}
+	}
+
+	PianoDestroyStationInfo (&reqData.info);
 }
 
